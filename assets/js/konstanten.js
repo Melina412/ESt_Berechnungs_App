@@ -5,7 +5,7 @@ let fall_2_max = 0; // 1. z wert
 let fall_3_max = 0;
 let fall_4_max = 0;
 
-// konstaten
+// konstanten
 let fall_2_k1 = 0;
 let fall_2_k2 = 0;
 
@@ -28,7 +28,7 @@ if (jahr === "2020") {
   fall_3_max = 57051;
   fall_4_max = 270500;
 
-  // konstaten
+  // konstanten
   fall_2_k1 = 972.87;
   fall_2_k2 = 1400;
 
@@ -50,7 +50,7 @@ if (jahr === "2020") {
   fall_3_max = 57051;
   fall_4_max = 270500;
 
-  // konstaten
+  // konstanten
   fall_2_k1 = 972.87;
   fall_2_k2 = 1400;
 
