@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESt.-Berechnung</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="input">
+        <h1>Einkommensteuer Rechner</h1>
+        <form onsubmit="return false">
+          <div>
+            <h3>Jahr</h3>
+            <select name="jahr" id="jahrInput">
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+            </select>
+          </div>
+          <div>
+            <h3>Tarif</h3>
+            <input
+              type="radio"
+              name="tarif"
+              id="einzeln"
+              value="einzeln"
+              checked
+              onclick=""
+            />
+            <label for="einzeln">Grundtarif (Einzelveranlagung)</label><br />
+
+            <input
+              type="radio"
+              name="tarif"
+              id="zusammen"
+              value="zusammen"
+              onclick=""
+            />
+            <label for="zusammen">Splittingtarif (Zusammenveranlagung)</label>
+          </div>
+
+          <div>
+            <h3>zvE</h3>
+            <div>
+              <input
+                type="number"
+                id="person1"
+                placeholder="Person 1"
+                value=""
+              />
+              <label for="person1">Euro</label>
+            </div>
+            <div>
+              <input
+                type="number"
+                id="person2"
+                placeholder="Person 2"
+                value=""
+              />
+              <label for="person2">Euro</label>
+            </div>
+          </div>
+          <br />
+
+          <div>
+            <input type="submit" value="Rechnen" onclick="berechnen()" />
+          </div>
+        </form>
+        <div id="arrayOutput"></div>
+      </section>
+
+      <section class="output">
+        <div>
+          <p>Deine Einkommensteuer beträgt:</p>
+          <p id="EStOutput"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/konstanten.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

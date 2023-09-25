@@ -1,0 +1,2 @@
+[0]Jahr;[1]Fall 1;[2]Formel 1;[3]Fall 2;[4]Hilfswert 2;[5]Formel 2;[6]Fall 3;[7]Hilfswert 3;[8]Formel 3;[9]Fall 4;[10]Formel 4;[11]Fall 5;[12]Formel 5
+2020;zvE <= 9408;ESt=0;9409 < zvE ≤ 14532;y=(zvE-9408)/10000;ESt=(972.87 * y + 1400) * y;14533  < x < 57051;z=(zvE = 14532) /10000;ESt=(212.02-z + 2397)*z + 972.79;57052 < zvE < 270500;ESt = 0.42 * zvE - 8963.74;270501 <= zvE;ESt = 0.45 * zvE - 17078.74
