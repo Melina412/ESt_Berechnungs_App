@@ -1,17 +1,38 @@
-// funktioniert bisher nur für 2020 weil werte noch fehlen
-// array version hat leider nicht geklappt (js lame 😒)
-// todo - max werte und konstanten für 2021 & 2022 eingeben
-// todo - inputfeld person 2 ausblenden
+// - Berechnung funktioniert, aber die Methode mit Eingabe der einzelnen Formeln
+// - und Konstanten erscheint mir extrem unübersichtlich und unintuitiv
+
 // todo - fehlermeldung bei falschem input
 // todo - style
+// todo - code versuchen übersichtlicher zu gliedern
+// * ---------------------------------------------------------------------------------------
+
+//  * Zurücksetzen des Output Textes beim Ändern der Auswahl Jahr/Tarif
+//  * (Notlösung, muss eigenltich in eine der anderen Funktionen mit eingebaut werden)
+function clear() {
+  document.getElementById("EStOutput").innerHTML = "";
+}
+clear();
+
+//  * zusätzliche Funktion um Auswahl des Jahres bei veränderter Auswahl
+//  * zu aktualisieren (wollte mit onchange/onclick einfach nicht funktionieren)
+//  *
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  document.getElementById("jahrInput").value;
+  console.log("jahr value event", jahr);
+});
+
+//  * Verstecken des 2. Inputfeldes wenn Grundtarif gewählt ist
+//  *
+einzeln.addEventListener("change", () => {
+  person2Input.style.display = "none";
+});
+zusammen.addEventListener("change", () => {
+  person2Input.style.display = "block";
+});
 
 function berechnen() {
-  //   if (!dataArray) {
-  //     console.error("CSV-Daten wurden noch nicht geladen.");
-  //     return;
-  //   }
-
-  // * Werte lesen
+  //   * Werte lesen
   //   *
   let jahr = document.getElementById("jahrInput").value;
   let tarif = document.querySelector('input[name="tarif"]:checked');
@@ -63,6 +84,7 @@ function berechnen() {
   switch (fall) {
     case "Fall 1": // - Fall 1 ---------------
       ESt = 0;
+      output.innerHTML = `${ESt.toFixed(2)} €`;
       console.log({ ESt });
       break;
     case "Fall 2": // - Fall 2 ---------------
@@ -71,9 +93,9 @@ function berechnen() {
       console.log({ ESt });
       console.log(2 * ESt);
       if (tarif === einzeln) {
-        output.innerHTML = `${ESt} €`;
+        output.innerHTML = `${ESt.toFixed(2)} €`;
       } else if (tarif === zusammen) {
-        output.innerHTML = `${2 * ESt} €`;
+        output.innerHTML = `${2 * ESt.toFixed(2)} €`;
       }
       break;
     case "Fall 3": // - Fall 3 ---------------

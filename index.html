@@ -14,9 +14,10 @@
           <div>
             <h3>Jahr</h3>
             <select name="jahr" id="jahrInput">
-              <option value="2020">2020</option>
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
+              <!-- <option>Jahr wählen...</option> -->
+              <option value="2020" onclick="clear()" selected>2020</option>
+              <option value="2021" onclick="clear()">2021</option>
+              <option value="2022" onclick="clear()">2022</option>
             </select>
           </div>
           <div>
@@ -27,7 +28,7 @@
               id="einzeln"
               value="einzeln"
               checked
-              onclick=""
+              onclick="clear()"
             />
             <label for="einzeln">Grundtarif (Einzelveranlagung)</label><br />
 
@@ -36,7 +37,7 @@
               name="tarif"
               id="zusammen"
               value="zusammen"
-              onclick=""
+              onclick="clear()"
             />
             <label for="zusammen">Splittingtarif (Zusammenveranlagung)</label>
           </div>
@@ -52,7 +53,7 @@
               />
               <label for="person1">Euro</label>
             </div>
-            <div>
+            <div id="person2Input" style="display: none">
               <input
                 type="number"
                 id="person2"
@@ -65,7 +66,12 @@
           <br />
 
           <div>
-            <input type="submit" value="Rechnen" onclick="berechnen()" />
+            <input
+              type="submit"
+              id="submitButton"
+              value="Rechnen"
+              onclick="berechnen()"
+            />
           </div>
         </form>
         <div id="arrayOutput"></div>
